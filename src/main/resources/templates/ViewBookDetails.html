@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Book Details</title>
+
+</head>
+<body>
+	<section>
+		<div class="container card-sh" style="margin-top: 150px;">
+			
+			<div class="col-md-12 p-5">
+				<div class="row">
+					
+					<th:block th:if="${session.succMsg}">
+						<!--<p class="text-success alert alert-success text-center" role="alert">[[${session.succMsg}]]</p>
+						<th:block th:text="${@commonService.removeSessionMessage}"></th:block>-->
+						
+						<div class="toast-container">
+						  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+						    <div class="toast-header">
+						      <img src="..." class="rounded me-2" alt="...">
+						      <strong class="me-auto">Bootstrap</strong>
+						      <small class="text-muted">just now</small>
+						      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						    </div>
+						    <div class="toast-body">
+								[[${session.succMsg}]]
+						    </div>
+							<th:block th:text="${@commonService.removeSessionMessage}"></th:block>
+						  </div>
+						
+						
+						
+					</th:block>
+					<th:block th:if="${session.errorMsg}">
+						<p class="text-danger text-center  alert alert-danger">[[${session.errorMsg}]]</p>
+						<th:block th:text="${@commonService.removeSessionMessage}"></th:block>
+					</th:block>
+					
+					<div class="col-md-6 text-center">
+						<img alt="book" th:src="@{'/images/books/'+${book.image}}" width="330px" height="400px">
+					</div>
+					<div class="col-md-6">
+						<p class="fs-3">[[${book.title}]]</p>
+						<p>
+							<span class="fw-bold">Author : </span>[[${book.author}]]<br>
+						</p>
+						<p><span class="fw-bold">Book Details : </span><br>
+							Category : [[${book.category}]]<br>
+							Policy : 7 Days Replacement & Return <br>
+							<span class="fw-bold">Description : </span><br>[[${book.description}]]
+						</p>
+						<p class="fs-5 fw-bold">
+							Price : <i class="fas fa-rupee-sign"></i>.&nbsp; [[${book.price}]]
+							
+						</p>
+						<div class="row">
+							<div class="col-md-4 text-danger text-center p-2">
+								<i class="fas fa-money-bill-wave fa-2x" style="color: #F86D72 ;"></i>
+								<p>Cash On Delivery</p>
+							</div>
+							<div class="col-md-4 text-danger text-center p-2">
+								<i class="fas fa-undo-alt fa-2x" style="color: #F86D72 ;"></i>
+								<p>Return Available</p>
+							</div>
+							<div class="col-md-4 text-danger text-center p-2">
+								<i class="fas fa-truck-moving fa-2x" style="color: #F86D72 ;"></i>
+								<p>Free Shiping</p>
+							</div>
+						</div>
+						<th:block th:if="${user==null}">
+						<a href="/signin" class="btn col-md-12" style="background-color:#F86D72;">Add To Cart</a>
+						</th:block>
+						
+						<th:block th:unless="${user==null}">
+					     <a th:href="@{'/user/addCart?bid='+${book.id}+'&uid='+${user.id}}" class="btn col-md-12" style="background-color:#F86D72;">Add To Cart</a>
+						</th:block>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+</body>
+</html>

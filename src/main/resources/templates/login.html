@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+	<section>
+	
+		<div style="margin-top: 150px;">
+			
+			    <div class="container mt-5">
+					<h1 class="text-center">Sign In</h1>
+					<div th:if="${param.error}" class="alert alert-danger text-center">Invalid email & password</div>
+					<div th:if="${param.logout}" class="alert alert-success text-center">Logout Successfully</div>
+			        <div class="row justify-content-center">
+			            <div class="col-md-4">
+			                <div class="card">
+			                    <div class="card-body">
+			                        <form action="/login" method="post">
+			                            <div class="row gy-3 gy-md-4 overflow-hidden">
+			                              <div class="col-12">
+			                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+			                                <input type="email" class="form-control" name="username" placeholder="name@example.com" required>
+			                              </div>
+			                              <div class="col-12">
+			                                <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+			                                <input type="password" class="form-control" name="password" required>
+			                              </div>
+			                              
+			                              <div class="col-12">
+			                                <div class="d-grid">
+			                                  <button class="btn bsb-btn-xl btn-primary" type="submit">Log in now</button>
+			                                </div>
+			                              </div>
+			                            </div>
+			                          </form>
+			                          <hr class="mt-5 mb-4 border-secondary-subtle">
+			                          <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
+			                            <a href="/register" class="link-secondary text-decoration-none">Create new account</a>
+			                          </div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+		</div>
+		
+	</section>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Orders</title>
+</head>
+<body>
+	<section>
+			<div class="container" style="margin-top:150px">
+			<div class="card card-sh">
+				<div class="card-header text-center">
+					<p class="fs-4">View Orders</p>
+					
+				</div>
+				<div class="card-body">
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">Id</th>
+					      <th scope="col">First Name</th>
+					      <th scope="col">Last Name</th>
+					      <th scope="col">Address</th>
+						  <th scope="col">City</th>
+						  <th scope="col">State</th>
+						  <th scope="col">Pincode</th>
+						  <th scope="col">Total Price</th>
+						  <th scope="col">Payment Type</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr th:each="p,c:${orders}">
+					      <th scope="row">[[${c.count}]]</th>
+					      <td>[[${p.firstName}]]</td>
+					      <td>[[${p.lastName}]]</td>
+					      <td>[[${p.address}]]</td>
+						  <td>[[${p.city}]]</td>
+						  <td>[[${p.state}]]</td>
+						  <td>[[${p.pincode}]]</td>
+						  <td>[[${p.totalOrderPrice}]]</td>
+						  <td>[[${p.paymentType}]]</td>
+					    </tr>
+					  </tbody>
+					</table>
+				</div>
+			</div>
+			</div>
+		</section>
+</body>
+</html>

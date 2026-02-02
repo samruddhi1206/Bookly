@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Admin</title>
+</head>
+<body>
+	<section>
+			<div class="container" style="margin-top:150px">
+				<p class="text-center fs-3">Admin Dashboard</p>
+				<div class="row">
+				   <div class="col-md-6 mt-2">
+					 <a href="addBook" class="text-decoration-none">
+						<div class="card card-sh">
+							<div class="card-body text-center">
+								<i class="fa-solid fa-square-plus fa-3x"></i>
+								<h4 class="text-dark mt-2">Add Books</h4>
+							</div>
+						</div>
+					 </a>
+					</div>
+				   	
+					<div class="col-md-6 mt-2">
+						<a href="/admin/viewbook" class="text-decoration-none">
+							<div class="card card-sh">
+								<div class="card-body text-center">
+								   	<i class="fa-solid fa-table-list fa-3x"></i>
+								   	<h4 class="text-dark mt-2">View Books</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 mt-5">
+						<a href="/admin/orders" class="text-decoration-none">
+							<div class="card card-sh">
+								<div class="card-body text-center">
+									<i class="fa-solid fa-box-open fa-3x"></i>
+									<h4 class="text-dark mt-2">Orders</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 mt-5">
+						<a href="/admin/users" class="text-decoration-none">
+							<div class="card card-sh">
+								<div class="card-body text-center">
+									<i class="fa-solid fa-circle-user fa-3x"></i>
+									<h4 class="text-dark mt-2">User</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+	</section>
+</body>
+</html>

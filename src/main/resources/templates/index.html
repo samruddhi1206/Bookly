@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bookly</title>
+
+</head>
+<body>
+	<section>
+		<!--Home Content-->
+				<div id="home" class="container-fluid" style="margin-top: 100px;background-image: url(images/banner-image-bg.jpg); height: 800px;">
+			        <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
+			            <!-- Indicators/dots -->
+			            <div class="carousel-indicators">
+			                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+			                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+			                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+			            </div>
+			            <div class="carousel-inner text-light text-center">
+			                <div class="carousel-item active" data-bs-interval="2000">
+			                    <div class="row justify-content-center text-dark">
+			                        <div class="col-md-5">
+			                            <div>
+			                                <h1 class="m-5" style="font-size: 4em;">Get All The Books You Need!</h1>
+			                                <p>Welcome to Bookly, your one-stop destination for buying and selling pre-loved books. Discover a wide collection of fiction, non-fiction, academic books, and more—all at affordable prices.</p>
+			                                
+											<a href="books" class="btn mt-5" style="background-color: #F86D72;">Explore Now</a>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-5">
+			                            <div class="justify-content-center">
+			                                <img src="images/bookstore.png" class="img-fluid">
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="carousel-item" data-bs-interval="2000">
+			                    <div class="row justify-content-center text-dark">
+			                        <div class="col-md-5">
+			                            <div>
+			                                <h1 class="m-5" style="font-size: 3.8em;">Book Is The Door Into Another World</h1>
+			                                <p>A book is like a portal to another world, where the boundaries of reality fade, and the imagination takes flight. Each page opens the door to new adventures, experiences, and perspectives, transporting readers to distant lands, different times, or even entirely different realms.</p>
+											<a href="books" class="btn mt-5" style="background-color: #F86D72;">Shop Now</a>
+
+
+			                            </div>
+			                        </div>
+			                        <div class="col-md-5">
+			                            <div class="justify-content-center">
+			                                <img src="images/bookstore.png" class="img-fluid">
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="carousel-item row" data-bs-interval="2000">
+			                    <div class="row justify-content-center text-dark">
+			                        <div class="col-md-5">
+			                            <div>
+			                                <h1 class="m-5" style="font-size: 4em;">Find Your Favourite Book</h1>
+			                                <h4>- all in one place!</h4>
+			                                <p>Looking for your next great read? Whether it's textbooks, novels, academic resources, or second-hand books, our platform helps you find exactly what you need. Browse a wide selection, buy new or used books, and even sell your old ones—all in one convenient place!</p>
+			                            </div>
+			                        </div>
+			                        <div class="col-md-5">
+			                            <div class="justify-content-center">
+			                                <img src="images/bookstore.png" class="img-fluid">
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			            </div>
+			            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+			                <span class="carousel-control-prev-icon"></span>
+			            </button>
+			            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+			                <span class="carousel-control-next-icon"></span>
+			            </button>
+			        </div>
+			    </div>
+		<!--Category Module-->
+		
+		<div class="container mt-5">
+			<div class="row category">
+				<p class="text-center fs-3 my-5">CATEGORIES</p>
+				
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'/books?category=Religious'}">
+							<img src="images/category/religious.png" width="60%" height="130px">	
+							<p>Religious</p></a>			
+						</div>				
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'/books?category=Romance'}">
+							<img src="images/category/lovee.jpg" width="60%" height="130px">	
+							<p>Romance</p></a>			
+						</div>				
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'/books?category=Adventure'}">
+							<img src="images/category/Adventure.png" width="60%" height="130px">	
+							<p>Adventure</p></a>				
+						</div>				
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'/books?category=Science'}">
+							<img src="images/category/science.jpg" width="60%" height="130px">	
+							<p>Science</p></a>		
+						</div>				
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'/books?category=Horror'}">
+							<img src="images/category/Horror.jpg" width="60%" height="130px">	
+							<p>Horror</p></a>
+						</div>				
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card rounded-circle card-sh">
+						<div class="card-body text-center">
+							<a th:href="@{'books?category=Fairy Tale'}">
+							<img src="images/category/FairyTale.png" width="60%" height="130px">	
+							<p>Fairy Tale</p></a>			
+						</div>				
+					</div>
+				</div>
+			</div>
+		</div>
+				<!--About Section-->
+				    <div id="about" class="container-fluid" style="margin-top: 170px">
+				        <div class="container-fluid">
+				            <div class="row text-center">
+								<p class="text-center fs-3 mb-5">WHY WE'RE THE RIGHT CHOICE</p>
+				                <div class="col-sm-3">
+				                    <div>
+				                        <i class="fa-solid fa-book-open pt-2" style="color: #F86D72 ;font-size: 1.5rem;"></i>
+				                        <h5 class="p-2">
+				                            Resell Books
+				                        </h5>
+				                        <p>
+				                            Turn your old books into cash or store credit! 
+				                            Sell your pre-loved books easily and give them a new home. Start today and make space for your next great read!
+				                        </p>
+				                    </div>
+				                </div>
+				                <div class="col-sm-3">
+				                    <div>
+				                        <i class="fa-solid fa-medal pt-2" style="color: #F86D72 ;font-size: 1.5rem;"></i>
+				                        <h5 class="p-2">
+				                            Quality Guarantee
+				                        </h5>
+				                        <p>
+				                            We are committed to providing high-quality books with excellent printing and binding.
+				                             If you're not satisfied with ypur purchase, we'll make it right. Shop with confidence!
+				                        </p>
+				                    </div>
+				                </div>
+				                <div class="col-sm-3">
+				                    <div>
+				                        <i class="fa-solid fa-tag pt-2" style="color: #F86D72 ;font-size: 1.5rem;"></i>
+				                        <h5 class="p-2">
+				                            Daily Offers
+				                        </h5>
+				                        <p>
+				                            Discover deals every day! Enjoy exclusive discounts on bestsellers, new arrivals, and classics.
+				                             Check back daily for fresh offers and save on your next read!
+				                        </p>
+				                    </div>
+				                </div>
+				                <div class="col-sm-3">
+				                    <div>
+				                        <i class="fa-solid fa-circle-check pt-2" style="color: #F86D72 ;font-size: 1.5rem;"></i>
+				                        <h5 class="p-2">
+				                            100% Secure Payment
+				                        </h5>
+				                        <p>
+				                            Shop with confidence! Our secure payment system ensures your transactions are safe and protected. 
+				                            Enjoy a hassle-fress checkout with trusted payment options.
+				                        </p>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+
+				    </div>
+				<!--Contact Section-->
+					   <div id="contact" class="container-fluid mt-5">
+					       <div class="container-fluid">
+					           <div class="row text-center">
+					               <div class="col-sm-3">
+					                   <div>
+					                       <img src="Images/main-logo.png" alt="LogoImg">
+					                       <p>
+					                           We are passionate about connecting readers with theri next great read, offering a wide selection and secure payments.
+					                           <br>Happy reading!
+					                       </p>
+					                       <ul class="d-flex list-unstyled gap-4">
+					                           <li>
+					                               <a href="#" style="color: black;">
+					                                 <i class="fa-brands fa-facebook"></i>
+					                               </a>
+					                             </li>
+					                             <li>
+					                               <a href="#" style="color: black;">
+					                                 <i class="fa-brands fa-instagram"></i>
+					                               </a>
+					                             </li>
+					                             <li>
+					                               <a href="#" style="color: black;">
+					                                 <i class="fa-brands fa-twitter"></i>
+					                               </a>
+					                             </li>
+					                             <li>
+					                               <a href="#" style="color: black;">
+					                                 <i class="fa-brands fa-linkedin"></i>
+					                               </a>
+					                             </li>
+					                             <li>
+					                               <a href="#" style="color: black;">
+					                                 <i class="fa-brands fa-youtube"></i>
+					                               </a>
+					                             </li>
+					                       </ul>
+					                   </div>
+					               </div>
+					               <div class="col-sm-3">
+					                   <div>
+					                       <h5 class="p-2">
+					                           Quick Links
+					                       </h5>
+					                       <ul class="navbar-nav">
+					                           <li class="nav-item"><a href="#home" class="nav-link text-dark">Home</a></li>
+					                           <li class="nav-item"><a href="#about" class="nav-link text-dark">About</a></li>
+					                           <li class="nav-item"><a href="/books" class="nav-link text-dark">Shop</a></li>
+					                           <li class="nav-item"><a href="#contact" class="nav-link text-dark">Contact</a></li>
+					                       </ul>
+					                   </div>
+					               </div>
+					               <div class="col-sm-3">
+					                   <div>
+					                       <h5 class="p-2">
+					                           Help & Info Help
+					                       </h5>
+					                       <ul class="navbar-nav">
+					                           <li class="nav-item"><a href="#" class="nav-link text-dark">Track Your Order</a></li>
+					                           <li class="nav-item"><a href="#" class="nav-link text-dark">Return Policies</a></li>
+					                           <li class="nav-item"><a href="#" class="nav-link text-dark">Contact Us</a></li>
+					                       </ul>
+					                   </div>
+					               </div>
+					               <div class="col-sm-3">
+					                   <div>
+					                       <h5 class="p-2">
+					                           Contact Us
+					                       </h5>
+					                       <p>
+					                           Do you have any queries or suggestions?
+					                           <a href="#" style="color: black;">bookly1208@gmail.com</a><br>
+					                           If you need support? Just give us a call.<br>
+					                           <a href="#" style="color: black;"> +55 111 222 333 44</a>
+					                       </p>
+					                   </div>
+					               </div>
+					           </div>
+					       </div>
+					   </div>
+					   <!--Footer-->
+					   <hr>
+					   <footer>
+					       <p class="m-5 text-center">Copyright © 2025 Bookly - Discover & Buy.</p>
+					   </footer>
+	</section>
+</body>
+</html>
